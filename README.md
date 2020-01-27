@@ -82,7 +82,7 @@ Before the example will work, you need to configure your Twilio phone number:
 //      (https://developer.electricimp.com/libraries/utilities/rocky)
 http.onrequest(function(request, response) {
     local path = request.path.tolower();
-    // The Webhook will be set up to post to '<YOUR_AGENT_URL>/twiliio'
+    // The Webhook will be set up to post to '<YOUR_AGENT_URL>/twilio'
     if (path == "/twilio" || path == "/twilio/") {
         // Twilio request handler
         try {
