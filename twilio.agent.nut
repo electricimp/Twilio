@@ -28,12 +28,17 @@ class Twilio {
         else request.sendasync(callback);
     }
 
-    function respond(resp, message) {
+    function respond(resp, message = null) {
         local data = { Response = { Message = message } };
+        
+        if (message == null)
+        {
+            data = { Response = "" }
+        }
+        
         local body = xmlEncode(data);
 
         resp.header("Content-Type", "text/xml");
-
 
         server.log(body);
 
