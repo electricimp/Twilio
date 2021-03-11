@@ -1,4 +1,4 @@
-# Twilio 1.0.1#
+# Twilio 1.0.1 #
 
 The Twilio library wraps [Twilio’s API](http://www.twilio.com/) for sending and receiving SMS message. To get started with this library, you will need a [Twilio developer account](http://developers.twilio.com/).
 
