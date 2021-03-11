@@ -1,10 +1,10 @@
-# Twilio #
+# Twilio 1.0.1#
 
 The Twilio library wraps [Twilio’s API](http://www.twilio.com/) for sending and receiving SMS message. To get started with this library, you will need a [Twilio developer account](http://developers.twilio.com/).
 
 Once you’ve created your account, note your Twilio Phone Number, Account SID and Auth Token.
 
-**To add this library to your project, add** `#require "Twilio.class.nut:1.0.0"` **to the top of your agent code**
+**To add this library to your project, add** `#require "Twilio.class.nut:1.0.1"` **to the top of your agent code**
 
 ## Class Usage
 
