@@ -63,6 +63,7 @@ class Twilio {
     function respond(response, message) {
         // Assemble the data to be sent back with the response
         local data = {"Response": {"Message": message}};
+        if (message == null) data = { Response = "" }
         local body = xmlEncode(data);
         response.header("Content-Type", "text/xml");
         response.send(200, body);
