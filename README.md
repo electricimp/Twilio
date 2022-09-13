@@ -10,7 +10,7 @@ Once you’ve created your account and set up a Project, note down your Twilio P
 
 ## Constructor: Twilio(*AccountSID, AuthToken, TwilioNumber*) ##
 
-To create a new Twilio object, pass in your Account SID, Auth Token and Twilio Phone Number to the constructor:
+To create a new Twilio object, pass in your Account SID, Auth Token and Twilio Phone Number to the constructor.
 
 ```squirrel
 twilio <- Twilio(TWILIO_SID, TWILIO_AUTH, TWILIO_NUM);

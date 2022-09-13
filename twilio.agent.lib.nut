@@ -1,9 +1,8 @@
 class Twilio {
-    
+
     static VERSION = "2.0.0";
-    
     static BASE_URL = "https://api.twilio.com/2010-04-01/Accounts/";
-    
+
     /*
      * Private properties - do not access directly
      *
@@ -11,7 +10,7 @@ class Twilio {
     _accountSid = null;
     _authToken = null;
     _phoneNumber = null;
-    
+
     /*
      * The constructor simply records the user's Twilio access credentals
      *
@@ -29,11 +28,11 @@ class Twilio {
         _authToken = authToken;
         _phoneNumber = phoneNumber;
     }
-    
+
     /*
      * Send an SMS message via Twilio.
      *
-     * @param {string}   to       - The target mobile phone number
+     * @param {string}   to       - The target mobile phone number in E.164 format
      * @param {string}   message  - The body of the message to send
      * @param {function} callback - An optional function called when the message has been transmitted. Default: null
      *
@@ -42,12 +41,12 @@ class Twilio {
      */
     function send(to, message, callback = null) {
         // Assemble the request to Twilio
-        local url = BASE_URL + _accountSid + "/SMS/Messages.json";
+        local url = BASE_URL + _accountSid + "/Messages";
         local auth = http.base64encode(_accountSid + ":" + _authToken);
         local headers = {"Authorization": "Basic " + auth};
-        local body = {"From": _phoneNumber, "To": to, "Body": message});
+        local body = {"From": _phoneNumber, "To": to, "Body": message};
         local request = http.post(url, headers, http.urlencode(body));
-        
+
         // Issue the request, synchronously or asynchronously
         if (callback == null) return request.sendsync();
         request.sendasync(callback);
@@ -83,7 +82,7 @@ class Twilio {
     }
 
     /******************** PRIVATE FUNCTIONS (DO NOT CALL) ********************/
-    
+
     /*
      * Recursively convert Squirrel data structures into an XML string
      *
@@ -106,7 +105,7 @@ class Twilio {
         }
         return s;
     }
-    
+
     /*
      * Check the supplied constructor argument is of the correct type and not null
      *
@@ -117,11 +116,11 @@ class Twilio {
      * @private
      */
     function _paramCheck(param) {
-        // Make sure the supplied 
+        // Make sure the supplied
         if (param == null || typeof param != "string" || param.len() == 0) return false;
         return true;
     }
-    
+
     /*
      * Construct and throw an error if a method is supplied an invalid argument
      *
