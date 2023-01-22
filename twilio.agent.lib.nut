@@ -44,7 +44,12 @@ class Twilio {
         local url = BASE_URL + _accountSid + "/Messages";
         local auth = http.base64encode(_accountSid + ":" + _authToken);
         local headers = {"Authorization": "Basic " + auth};
-        local body = {"From": _phoneNumber, "To": to, "Body": message};
+        local body = {"To": to, "Body": message};
+        if (_phoneNumber.len() <= 12) {
+            body.From <- _phoneNumber;
+        } else {
+            body.MessagingServiceSid <- _phoneNumber;
+        }
         local request = http.post(url, headers, http.urlencode(body));
 
         // Issue the request, synchronously or asynchronously
