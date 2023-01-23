@@ -28,9 +28,9 @@ An optional callback can be specified: in this case, the message will be sent as
 
 | Parameter | Data&nbsp;Type | Required? | Description |
 | --- | --- | --- | --- |
-| *to* | String | Yes | The phone number the SMS should be sent to |
-| *to* | String | Yes | The body of the SMS |
-| *to* | String | No | An optional function called when the message has been transmitted. Default: none |
+| *numberToSendTo* | String | Yes | The phone number the SMS should be sent to |
+| *message* | String | Yes | The body of the SMS |
+| *callback* | String | No | An optional function called when the message has been transmitted. Default: none |
 
 #### Returns ####
 
