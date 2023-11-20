@@ -4,7 +4,7 @@ The Twilio library wraps [Twilio’s API](https://www.twilio.com/) for sending a
 
 Once you’ve created your account and set up a Project, note down your Twilio Phone Number, and the project’s Account SID and Auth Token.
 
-**To include this library in your project, add** `#require "Twilio.agent.nut:2.0.0"` **at the top of your agent code**
+**To include this library in your project, add** `#require "Twilio.agent.lib.nut:2.0.0"` **at the top of your agent code**
 
 ## Class Usage ##
 
